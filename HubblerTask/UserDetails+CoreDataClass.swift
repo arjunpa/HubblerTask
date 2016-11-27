@@ -36,6 +36,28 @@ public class UserDetails: NSManagedObject {
 
     }
     
+    func delete(completion:@escaping (_ flag:Bool, _ error:Error?) -> Void){
+        let defaultIns = UserDetails.getDefaultInstance()
+        defaultIns.queue?.addOperation({
+            var errord:Error?
+            var flag:Bool = true
+            UserDetails.getContext().delete(self)
+            do{
+                try UserDetails.getContext().save()
+            }
+            catch{
+                print(error)
+                errord = error
+                flag = false
+            }
+            OperationQueue.main.addOperation({ 
+                completion(flag,errord)
+            })
+            
+        })
+        
+    }
+    
     public class func getRecords(completion:@escaping (_ userDetails:[UserDetails], _ error:Error?) -> Void){
         let defaultIns = getDefaultInstance()
         
@@ -71,11 +93,8 @@ public class UserDetails: NSManagedObject {
                 else{
                     var results:[UserDetailFetchResult] = []
                     for userDetail in userDetails{
-                        
-                        let rawData:[RawModel] = NSKeyedUnarchiver.unarchiveObject(with: userDetail.data as! Data) as! [RawModel]
-                        let result = UserDetailFetchResult.init()
                     
-                        result.rawData = rawData
+                        let result = UserDetailFetchResult.init(userDetail)
                         results.append(result)
                     }
                     OperationQueue.main.addOperation({ 

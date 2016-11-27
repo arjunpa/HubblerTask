@@ -11,4 +11,18 @@ import UIKit
 public class UserDetailFetchResult: NSObject {
     
     var rawData:[RawModel] = []
+    private var userDetail:UserDetails!
+    
+    public required init(_ userDetail:UserDetails) {
+        super.init()
+        self.userDetail = userDetail
+        let rawDatad:[RawModel] = NSKeyedUnarchiver.unarchiveObject(with: userDetail.data as! Data) as! [RawModel]
+        self.rawData = rawDatad
+    }
+    
+    func delete(completion:@escaping (_ flag:Bool, _ error:Error?) -> Void){
+        self.userDetail.delete(completion: completion)
+    }
 }
+
+

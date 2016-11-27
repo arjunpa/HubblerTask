@@ -342,9 +342,9 @@ extension AddViewController:UITextViewDelegate{
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
-        var textd = textView.text
         
-        if text == ""{
+        
+  /*      if text == ""{
             if (textd?.characters.count)! > 0{
                 let endIndex = textd?.endIndex
                 textd!.remove(at: (textd?.index(before: endIndex!))!)
@@ -353,13 +353,17 @@ extension AddViewController:UITextViewDelegate{
         else{
             textd = textd! + text
         }
+ */
+        var textd:NSString = textView.text! as NSString
+        textd = textd.replacingCharacters(in: range, with: text) as NSString
+        
         print(textd)
         
         let center = textView.center
         let rootViewPoint = textView.superview?.convert(center, to: self.table_view)
         let indexPath = self.table_view.indexPathForRow(at: rootViewPoint!)
-        dataSource[(indexPath?.row)!].userText = textd!
-        usedText[indexPath!] = textd
+        dataSource[(indexPath?.row)!].userText = textd as String
+        usedText[indexPath!] = textd as String
         return true
     }
 }
@@ -378,7 +382,7 @@ extension AddViewController:UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        var text = textField.text
+       /* var text = textField.text
         
         if string == ""{
             if (text?.characters.count)! > 0{
@@ -389,12 +393,17 @@ extension AddViewController:UITextFieldDelegate{
         else{
             text = text! + string
         }
+ */
+        
+        var text:NSString = textField.text! as NSString
+        text = text.replacingCharacters(in: range, with: string) as NSString
         print(text)
         let center = textField.center
         let rootViewPoint = textField.superview?.convert(center, to: self.table_view)
         let indexPath = self.table_view.indexPathForRow(at: rootViewPoint!)
-        dataSource[(indexPath?.row)!].userText = text!
-        usedText[indexPath!] = text
+        dataSource[(indexPath?.row)!].userText = text as String
+        usedText[indexPath!] = text as String
+ 
         return true
     }
 }
