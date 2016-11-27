@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="TypeTextCell" customModule="HubblerTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="93.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80b-zl-bTn">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCk-pa-qh4">
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="MG7-hO-JjD"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Error Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJb-CI-GIi">
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="80b-zl-bTn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="3WM-2w-QXS"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GJb-CI-GIi" secondAttribute="bottom" constant="2" id="4rq-MH-6qA"/>
+                    <constraint firstItem="GJb-CI-GIi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="FDx-3J-JiI"/>
+                    <constraint firstItem="80b-zl-bTn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="PCh-Qp-obN"/>
+                    <constraint firstAttribute="trailing" secondItem="GJb-CI-GIi" secondAttribute="trailing" constant="39" id="R9Y-P9-MT5"/>
+                    <constraint firstAttribute="trailing" secondItem="CCk-pa-qh4" secondAttribute="trailing" constant="26" id="RxR-ex-8PH"/>
+                    <constraint firstItem="CCk-pa-qh4" firstAttribute="top" secondItem="80b-zl-bTn" secondAttribute="bottom" constant="5" id="hMI-3Y-IpE"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="80b-zl-bTn" secondAttribute="trailing" priority="990" constant="33" id="j7W-N0-LOt"/>
+                    <constraint firstItem="CCk-pa-qh4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="qEd-Xd-4w2"/>
+                    <constraint firstItem="GJb-CI-GIi" firstAttribute="top" secondItem="CCk-pa-qh4" secondAttribute="bottom" constant="2" id="tV0-N1-yxt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="errorLabel" destination="GJb-CI-GIi" id="H0y-3c-f9W"/>
+                <outlet property="fieldLabel" destination="80b-zl-bTn" id="uFY-eM-adM"/>
+                <outlet property="textField" destination="CCk-pa-qh4" id="ufO-Z0-eQN"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="28"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="TypePickerCell" customModule="HubblerTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66w-op-wom">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfN-vn-3SO">
+                        <color key="backgroundColor" red="0.0" green="0.33333333329999998" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="dYH-wg-PXN"/>
+                        </constraints>
+                        <state key="normal" title="Select">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVv-3P-VrE">
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="66w-op-wom" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="6QJ-sl-nIa"/>
+                    <constraint firstAttribute="trailing" secondItem="oVv-3P-VrE" secondAttribute="trailing" constant="26" id="Apf-1U-gvN"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oVv-3P-VrE" secondAttribute="bottom" constant="3" id="QOt-ZQ-mbT"/>
+                    <constraint firstItem="oVv-3P-VrE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="X0z-qj-A3l"/>
+                    <constraint firstItem="66w-op-wom" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Yib-Ie-fGs"/>
+                    <constraint firstItem="oVv-3P-VrE" firstAttribute="top" secondItem="hfN-vn-3SO" secondAttribute="bottom" constant="5" id="Z0W-9j-lxc"/>
+                    <constraint firstItem="hfN-vn-3SO" firstAttribute="top" secondItem="66w-op-wom" secondAttribute="bottom" constant="2" id="cdB-Yw-DEv"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="66w-op-wom" secondAttribute="trailing" priority="999" constant="33" id="kTp-p4-C71"/>
+                    <constraint firstItem="hfN-vn-3SO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="mCo-U4-wBI"/>
+                    <constraint firstAttribute="trailing" secondItem="hfN-vn-3SO" secondAttribute="trailing" constant="26" id="p1y-w6-ClX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnText" destination="hfN-vn-3SO" id="R5R-XX-Vui"/>
+                <outlet property="errorLabel" destination="oVv-3P-VrE" id="hIk-b4-FLi"/>
+                <outlet property="fieldLabel" destination="66w-op-wom" id="yff-Z1-Bpv"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="120"/>
+        </tableViewCell>
+    </objects>
+</document>
