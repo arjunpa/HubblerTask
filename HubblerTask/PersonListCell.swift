@@ -22,7 +22,8 @@ class PersonListCell: UITableViewCell {
     func configure(result:UserDetailFetchResult){
         
         let firstData = result.rawData.first
-        field1.text = firstData?.field_name
+        field1.text = (firstData?.field_name.capitalized)! + " :"
+        
         value1.text = firstData?.userText
         if firstData?.userText == ""{
             field1.text = ""
@@ -31,7 +32,7 @@ class PersonListCell: UITableViewCell {
         if result.rawData.count > 1{
             let secondData = result.rawData[1]
             value2.text = secondData.userText
-            field2.text = secondData.field_name
+            field2.text = secondData.field_name.capitalized + " :"
             
             if secondData.userText == ""{
                 field2.text = ""

@@ -3,8 +3,9 @@
     <entity name="UserDetails" representedClassName=".UserDetails" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="genUniqueID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserDetails" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="UserDetails" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

@@ -22,6 +22,10 @@ class DashboardViewController: UIViewController {
         self.prepareData()
         self.setupSearchController()
         
+        for i in 0..<5{
+            print(Utils.generateID())
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -137,16 +141,16 @@ extension DashboardViewController:UITableViewDataSource{
 }
 extension DashboardViewController:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        self.filterDataSource(searchController.searchBar.text!)
+        self.filterDataSource(searchController.searchBar.text!.lowercased())
     }
     
     func filterDataSource(_ searchText:String){
         self.filteredDataSource = self.dataSource.filter { (userFetchResult) -> Bool in
-            if (userFetchResult.rawData.first?.userText.contains(searchText))!{
+            if (userFetchResult.rawData.first?.userText.lowercased().contains(searchText))!{
                 return true
             }
             if userFetchResult.rawData.count > 1{
-                if userFetchResult.rawData[1].userText.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) != ""{
+                if userFetchResult.rawData[1].userText.lowercased().trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) != ""{
                     if userFetchResult.rawData[1].userText.contains(searchText){
                         return true
                     }

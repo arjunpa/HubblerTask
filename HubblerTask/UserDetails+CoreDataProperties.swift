@@ -18,5 +18,6 @@ extension UserDetails {
     
     @NSManaged public var data: NSData?
     @NSManaged public var date: NSDate?
+    @NSManaged public var genUniqueID:String?
 
 }

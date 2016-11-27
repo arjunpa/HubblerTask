@@ -342,18 +342,7 @@ extension AddViewController:UITextViewDelegate{
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
-        
-        
-  /*      if text == ""{
-            if (textd?.characters.count)! > 0{
-                let endIndex = textd?.endIndex
-                textd!.remove(at: (textd?.index(before: endIndex!))!)
-            }
-        }
-        else{
-            textd = textd! + text
-        }
- */
+    
         var textd:NSString = textView.text! as NSString
         textd = textd.replacingCharacters(in: range, with: text) as NSString
         
@@ -382,18 +371,6 @@ extension AddViewController:UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-       /* var text = textField.text
-        
-        if string == ""{
-            if (text?.characters.count)! > 0{
-                let endIndex = text?.endIndex
-                text?.remove(at: (text?.index(before: endIndex!))!)
-            }
-        }
-        else{
-            text = text! + string
-        }
- */
         
         var text:NSString = textField.text! as NSString
         text = text.replacingCharacters(in: range, with: string) as NSString

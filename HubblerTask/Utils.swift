@@ -25,4 +25,9 @@ class Utils: NSObject {
     return [NSIndexPath indexPathForRow:y inSection:x];
     }
  */
+    class func generateID() -> String
+    {
+        
+        return UUID().uuidString
+    }
 }

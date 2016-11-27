@@ -116,6 +116,7 @@ public class UserDetails: NSManagedObject {
                 
                 userDetails.data = archivedData as NSData?
                 userDetails.date = date
+                userDetails.genUniqueID = Utils.generateID()
                 
                 do{
                      try getContext().save()
