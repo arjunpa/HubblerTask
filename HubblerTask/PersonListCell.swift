@@ -14,9 +14,11 @@ class PersonListCell: UITableViewCell {
     @IBOutlet weak var value1:UILabel!
     @IBOutlet weak var field2:UILabel!
     @IBOutlet weak var value2:UILabel!
+    @IBOutlet weak var container:UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.container.tag = 200
     }
 
     func configure(result:UserDetailFetchResult){

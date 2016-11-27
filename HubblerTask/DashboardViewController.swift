@@ -114,6 +114,19 @@ extension DashboardViewController:UITableViewDelegate{
         let size = sizing?.preferredSizeFittingTargetSize(targetSize: target)
         return (size?.height)!
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let view = cell.contentView.viewWithTag(200){
+            view.layer.cornerRadius = 5.0
+            view.layer.shadowRadius = 5.0
+            view.layer.shadowOffset = CGSize.init(width: 1, height: 0)
+            view.layer.shadowOpacity = 0.25
+            
+            let shadowFrame = view.layer.bounds
+            let path = UIBezierPath.init(rect: shadowFrame).cgPath
+            cell.layer.shadowPath = path
+        }
+    }
 }
 extension DashboardViewController:UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
